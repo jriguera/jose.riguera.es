@@ -1,54 +1,48 @@
 # Site settings
-title:       Pixyll
-email:       your_email@example.com
-author:      John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
-baseurl:     ""
-url:         "http://pixyll.com"
+title:       Jose Riguera
+author:      Jose Riguera
+years:       1980-2015
+description: open thoughts  
+url:         "http://jose.riguera.es"
+baseurl:     "/"
 
-# Google analytics
-google_analytics:
+# PAGINATION
+paginate: 5
+paginate_path: "/blog/page:num/"
+permalink: "/blog/:categories/:year/:month/:day/:title/"
+search_url: "/blog/search.html"
+
+# Social
+google_plus: jriguera
+twitter: jose_riguera
+github: jriguera
+linkedin: jriguera
+email: jriguera@gmail.com
+
+# User
+user_claim: "Documenting is the second step in automation; the first one: do it manually... once!"
+user_avatar: "images/jriguera.png"
+user_twitter: 3
 
 # Optional features
-animated:           false
-show_related_posts: false
-show_post_footers:  false
-
-# Disqus post comments
-# (leave blank to disable Disqus)
-disqus_shortname:
-
-# Social icons
-show_social_icons: false
-github_username:
-stackoverflow_id:
-twitter_username:
-google_plus_id:
-linkedin_username:
-angellist_username:
-bitcoin_url:
-paypal_url:
-flattr_button:
+google_analytics: false
+post_related_posts: true
+# Disqus post comments (leave blank to disable Disqus)
+disqus:
+post_sharing_icons: true
+post_related_posts: true
 
 # Post sharing icons
-show_sharing_icons: false
-share_text: 'Share this post!'
-# Change to 'true' to enable individual icons
-share_facebook: false
-share_twitter: false
-share_googleplus: false
-share_linkedin: false
-share_digg: false
-share_tumblr: false
-share_reddit: false
-share_stumbleupon: false
-share_hackernews: false
+share_facebook: true
+share_twitter: true
+share_googleplus: true
+share_linkedin: true
+share_reddit: true
 
 # Build settings
 markdown:     redcarpet
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
-permalink:    pretty
-paginate:     3
+
 sass:
   compressed: true

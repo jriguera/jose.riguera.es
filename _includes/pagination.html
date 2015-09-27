@@ -1,20 +1,17 @@
-<div class="pagination clearfix mb1 mt4">
-  <div class="left">
-    {% if paginator.previous_page %}
-      {% if paginator.page == 2 %}
-        <a class="pagination-item" href="{{ site.baseurl }}/">Newer</a>
-      {% else %}
-        <a class="pagination-item" href="{{ site.baseurl }}/page{{paginator.previous_page}}/">Newer</a>
-      {% endif %}
-    {% else %}
-      <span class="pagination-item disabled">Newer</span>
-    {% endif %}
-  </div>
-  <div class="right">
-    {% if paginator.next_page %}
-      <a class="pagination-item" href="{{ site.baseurl }}/page{{paginator.next_page}}/">Older</a>
-    {% else %}
-      <span class="pagination-item disabled">Older</span>
-    {% endif %}
-  </div>
+<div class="pagination clearfix">
+  {% if paginator.previous_page %}
+  <a role="button" class="btn btn-labeled btn-default" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+  {% else %}
+  <a role="button" class="disabled btn btn-labeled btn-default" href="#">
+  {% endif %}
+    <span class="btn-label"><i class="glyphicon glyphicon-chevron-left"></i></span>Newer
+  </a>
+  <span class="text-pages">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+  <a role="button" class="btn btn-labeled btn-default" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+  {% else %}
+  <a role="button" class="disabled btn btn-labeled btn-default" href="#">
+  {% endif %}
+     Older<span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span>
+  </a>
 </div>

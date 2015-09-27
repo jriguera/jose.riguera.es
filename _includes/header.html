@@ -1,14 +1,28 @@
-<header class="site-header px2 px-responsive">
-  <div class="mt2 wrap">
-    <div class="measure">
-      <a href="{{ site.url }}" class="site-title">{{ site.title }}</a>
-      <nav class="site-nav right">
-        {% include navigation.html %}
-      </nav>
-      <div class="clearfix"></div>
-      {% if site.show_social_icons %}
-        {% include social_links.html %}
-      {% endif %}
+  <header>
+    <div class="container">
+      <div id="header" class="row" role="navigation">
+        <div id="header-logo" class="col-md-6 col-xs-12 header-logo">
+          <h1><a href="{{ site.baseurl }}">{{ site.title }}</a> <small> {{ site.description }}</small></h1>
+        </div>
+        <div class="col-md-6 col-xs-12 header-navigation">
+          <div id="header-tabs" class="header-tabs dropdown">
+             <button type="button" class="hidden btn btn-default dropdown-toggle" id="header-button-mobile" data-toggle="dropdown" aria-expanded="true">
+                <span class="glyphicon glyphicon-list-alt"></span>
+             </button>  
+             <ul id="header-tabs-items" class="nav nav-tabs header-tabs-items">
+                {% if page.tab %}
+                <li role="presentation"><a href="{{ site.baseurl }}blog">Blog</a></li>
+                {% else %}
+                <li role="presentation" class="active"><a href="{{ site.baseurl }}blog">Blog</a></li>
+                {% endif %}
+                {% if page.tab == 'home' %}
+                <li role="presentation" class="active"><a href="{{ site.baseurl }}">Home</a></li>
+                {% else %}
+                <li role="presentation"><a href="{{ site.baseurl }}">Home</a></li>
+                {% endif %}
+              </ul>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
