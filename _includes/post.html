@@ -24,7 +24,7 @@
             <div class="post-buttons">
               <div class="post-tags">
                 {% for label in post.tags %}
-                <a href="#" class="btn btn-labeled btn-info btn-xs" role="button">
+                <a href="{{ label | prepend: 'blog/search.html?tag=' | prepend: site.baseurl }}" class="btn btn-labeled btn-info btn-xs" role="button">
                   <span class="btn-label"><i class="glyphicon glyphicon-tags"></i></span> 
                   {{ label }}
                 </a>
@@ -32,7 +32,7 @@
               </div>
               <div class="post-categories">
                 {% for label in post.categories %}
-                <a href="{{ label | prepend: 'blog/' | prepend: site.baseurl }}" class="btn btn-labeled btn-success btn-xs" role="button">
+                <a href="{{ label | prepend: 'blog/search.html?cat=' | prepend: site.baseurl }}" class="btn btn-labeled btn-success btn-xs" role="button">
                   <span class="btn-label"><i class="glyphicon glyphicon-paperclip"></i></span> 
                   {{ label }}
                 </a>

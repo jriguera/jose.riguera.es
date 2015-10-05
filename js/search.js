@@ -8,9 +8,12 @@ $(function() {
     var cat = Jekyll.getParam('cat');
     var tag = Jekyll.getParam('tag');
     var query = Jekyll.getParam('q');
-    var type = "<q><i>" + query + "</i></q>";
+    var type = "";
     var posts;
 
+    if (query) {
+      type = "<q><i>" + query + "</i></q>";
+    }
     if (cat && (cat != 'all')) {
       posts = Jekyll.filterPostsByPropertyValue(data, 'categories', cat);
       type = type + " on <i>" + cat + "</i> category";      
